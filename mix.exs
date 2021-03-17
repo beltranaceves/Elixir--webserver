@@ -5,7 +5,8 @@ defmodule Todo.MixProject do
     [
       app: :todo,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.10",
+      build_embebbed: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
