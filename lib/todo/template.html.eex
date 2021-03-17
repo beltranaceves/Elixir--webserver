@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OTP Todo App</title>
+		<meta  charset="utf-8">
+		<link  rel="stylesheet"  href="/static/todo.css">
+	</head>
+	<body>
+		<h1>Todo</h1>
+        <form method="POST">
+            <input type="text"
+                id="new-item"
+                name="item"
+                pattern=".{3,}"
+                required
+                aria-label="Write a new todo item"
+                title="3 characters minimum"/>
+            <input type="submit"
+                value="Add new item"
+                id="add-new-item"/>
+        </form>
+        
+<ul>
+	<%=  for todo <- todos do  %>
+		<li  class="item">
+		<%=  if todo.done do  %>
+				<span  class="todo-item"><s><%= todo.name %></s></span>
+				<form  method="POST"  action="toggle">
+				<input  type="hidden"  name="item"  value="<%= todo.id %>">
+				<input  class="incomplete"  type="submit"  value="Not Done"  />
+			</form>
+				<form  method="POST"  action="delete">
+				<input  type="hidden"  name="item"  value="<%= todo.id %>">
+				<input  class="delete"  type="submit"  value="Remove"  />
+			</form>
+		<%  else  %>
+			<span  class="todo-item"><%= todo.name %></span>
+			<form  method="POST"  action="toggle">
+				<input  type="hidden"  name="item"  value="<%= todo.id %>">
+				<input  class="incomplete"  type="submit"  value="Done"  />
+			</form>
+			<form  method="POST"  action="delete">
+				<input  type="hidden"  name="item"  value="<%= todo.id %>">
+				<input  class="delete"  type="submit"  value="Remove"  />
+			</form>
+		<%  end  %>
+		</li>
+	<%  end  %>
+</ul>
+	</body>
+</html>

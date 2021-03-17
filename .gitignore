@@ -1,3 +1,8 @@
+
+# Created by https://www.gitignore.io/api/elixir
+# Edit at https://www.gitignore.io/?templates=elixir
+
+### Elixir ###
 /_build
 /cover
 /deps
@@ -8,4 +13,7 @@ erl_crash.dump
 *.beam
 /config/*.secret.exs
 .elixir_ls/
-.idea
+
+### Elixir Patch ###
+
+# End of https://www.gitignore.io/api/elixir

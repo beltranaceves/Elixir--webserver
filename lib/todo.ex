@@ -1,6 +1,6 @@
-defmodule ElixirJsonRestfullApi do
+defmodule Todo do
   @moduledoc """
-  Documentation for ElixirJsonRestfullApi.
+  Documentation for Todo.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule ElixirJsonRestfullApi do
 
   ## Examples
 
-      iex> ElixirJsonRestfullApi.hello()
+      iex> Todo.hello()
       :world
 
   """

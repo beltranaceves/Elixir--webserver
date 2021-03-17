@@ -1,3 +1,3 @@
-# Elixir JSON RESTful API (without using Phoenix)
+# Todo App
 
-https://medium.com/@helabenkhalfallah/elixir-json-restful-api-without-phoenix-df2eed644659
+See http://www.matthewsecrist.net//building-a-basic-http-server-with-elixir-p1/ and http://www.matthewsecrist.net//building-a-basic-http-server-with-elixir-p2/
