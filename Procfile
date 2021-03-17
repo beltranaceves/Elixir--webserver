@@ -1,1 +1,1 @@
-web: iex -S mix run 
+web: iex -S mix run
