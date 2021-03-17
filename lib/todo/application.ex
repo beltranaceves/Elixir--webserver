@@ -9,7 +9,7 @@ defmodule Todo.Application do
 
   def start(_type, _args) do
     children = [
-      {Plug.Cowboy, scheme: :http, plug: Todo.Router, options: [port: 3000]},
+      {Plug.Cowboy, scheme: :http, plug: Todo.Router, options: [port: {:system, "PORT"}]},
       {Todo.Server, [name: Todo.Server]}
     ]
 
