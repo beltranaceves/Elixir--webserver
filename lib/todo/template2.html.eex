@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TodoList</title>
+    <link rel="icon" type="image/x-icon" href="./static/favicon.ico" />
+    <title>Beltran's TODO</title>
     <link
       href="https://fonts.googleapis.com/css?family=Poppins&display=swap"
       rel="stylesheet"
@@ -18,7 +19,7 @@
   </head>
   <body>
     <header>
-      <h1>Ed's Todo List</h1>
+      <h1>Lista de tareas de Beltrán</h1>
     </header>
     <form method="POST">
             <input type="text"
