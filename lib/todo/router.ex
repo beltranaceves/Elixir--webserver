@@ -4,7 +4,7 @@ defmodule Todo.Router do
 
   alias Todo.Server
 
-  @template "lib/todo/template3.html.eex"
+  @template "lib/todo/template.html.eex"
 
   plug(Plug.Static, from: :todo, at: "/static")  #Routing de contenido statico (css, js)
   plug(Plug.Logger)

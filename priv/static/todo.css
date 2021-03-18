@@ -49,6 +49,7 @@ form button:hover {
 }
 
 .todo {
+  height: 50px;
   margin: 0.5rem;
   background: white;
   font-size: 1.5rem;
