@@ -20,21 +20,48 @@
     <header>
       <h1>Ed's Todo List</h1>
     </header>
-    <form>
-      <input type="text" class="todo-input" />
-      <button class="todo-button" type="submit">
+    <form method="POST">
+            <input type="text"
+                class="todo-input"
+                id="new-item"
+                name="item"
+                pattern=".{3,}"
+                required
+                aria-label="Write a new todo item"
+                title="3 characters minimum"/>
+            <button class="todo-button" type="submit">
         <i class="fas fa-plus-square"></i>
       </button>
-      <div class="select">
-        <select name="todos" class="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
-    </form>
+        </form>
+
     <div class="todo-container">
-      <ul class="todo-list"></ul>
+      <ul class="todo-list">
+	      <%=  for todo <- todos do  %>
+		      <li  class="item">
+		        <%=  if todo.done do  %>
+              <span  class="todo-item"><s><%= todo.name %></s></span>
+              <form  method="POST"  action="toggle">
+                <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                <input  class="incomplete"  type="submit"  value="Not Done"  />
+              </form>
+              <form  method="POST"  action="delete">
+                <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                <input  class="delete"  type="submit"  value="Remove"  />
+              </form>
+            <%  else  %>
+              <span  class="todo-item"><%= todo.name %></span>
+                <form  method="POST"  action="toggle">
+                  <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                  <input  class="incomplete"  type="submit"  value="Done"  />
+                </form>
+                <form  method="POST"  action="delete">
+                  <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                  <input  class="delete"  type="submit"  value="Remove"  />
+                </form>
+		          <%  end  %>
+          </li>
+	      <%  end  %>
+      </ul>
     </div>
 
     <script src="./app.js"></script>

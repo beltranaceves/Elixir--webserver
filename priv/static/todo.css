@@ -1,7 +1,3 @@
-body {
-  background: #ff1212;
-  color: #333333;
-}
 * {
   margin: 0;
   padding: 0;
@@ -137,7 +133,7 @@ select {
 }
 /* Transition */
 /*
-  .select:hover::after {
-	transform: scale(1.5);
-  }
-  */
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
