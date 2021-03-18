@@ -30,7 +30,7 @@
                 required
                 aria-label="Write a new todo item"
                 title="3 characters minimum"/>
-            <button class="todo-button" type="submit">
+            <button class="todo-button" type="submit" value="Add new item" id="add-new-item">
         <i class="fas fa-plus-square"></i>
       </button>
         </form>
@@ -38,29 +38,45 @@
     <div class="todo-container">
       <ul class="todo-list">
 	      <%=  for todo <- todos do  %>
-		      <li  class="item">
+        <div class="todo" style="display: flex;">
 		        <%=  if todo.done do  %>
-              <span  class="todo-item"><s><%= todo.name %></s></span>
-              <form  method="POST"  action="toggle">
-                <input  type="hidden"  name="item"  value="<%= todo.id %>">
-                <input  class="incomplete"  type="submit"  value="Not Done"  />
-              </form>
-              <form  method="POST"  action="delete">
-                <input  type="hidden"  name="item"  value="<%= todo.id %>">
-                <input  class="delete"  type="submit"  value="Remove"  />
-              </form>
-            <%  else  %>
-              <span  class="todo-item"><%= todo.name %></span>
+              <div class="todo completed" style="display: flex;">
+                <li class="todo-item">
+                  <s><%= todo.name %></s>
+                </li>
                 <form  method="POST"  action="toggle">
                   <input  type="hidden"  name="item"  value="<%= todo.id %>">
-                  <input  class="incomplete"  type="submit"  value="Done"  />
+                  <button class="complete-btn" type="submit" value="Not Done">
+                    <i class="fas fa-check"></i>
+                  </button>
                 </form>
                 <form  method="POST"  action="delete">
                   <input  type="hidden"  name="item"  value="<%= todo.id %>">
-                  <input  class="delete"  type="submit"  value="Remove"  />
+                  <button class="trash-btn" value="Remove">
+                    <i class="fas fa-trash"></i>
+                  </button>
                 </form>
+              </div>
+            <%  else  %>
+                <div class="todo completed" style="display: flex;">
+                  <li class="todo-item">
+                    <%= todo.name %>
+                  </li>
+                  <form  method="POST"  action="toggle">
+                    <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                    <button class="complete-btn" type="submit" value="Done">
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </form>
+                  <form  method="POST"  action="delete">
+                    <input  type="hidden"  name="item"  value="<%= todo.id %>">
+                    <button class="trash-btn" value="Remove">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </form>
+                </div>
 		          <%  end  %>
-          </li>
+        </div>
 	      <%  end  %>
       </ul>
     </div>

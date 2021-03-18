@@ -4,7 +4,7 @@ defmodule Todo.Router do
 
   alias Todo.Server
 
-  @template "lib/todo/template2.html.eex"
+  @template "lib/todo/template3.html.eex"
 
   plug(Plug.Static, from: :todo, at: "/static")  #Routing de contenido statico (css, js)
   plug(Plug.Logger)
@@ -36,7 +36,7 @@ defmodule Todo.Router do
     send_resp(conn, 200, response)
   end
 
-  post "delete" do
+  post "/delete" do
     response =
       read_input(conn)
       |> Server.remove()
