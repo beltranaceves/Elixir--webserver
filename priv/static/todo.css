@@ -11,6 +11,7 @@ body {
 }
 header {
   font-size: 2rem;
+  text-align: center;
 }
 
 header,
@@ -138,3 +139,9 @@ select {
   transform: scale(1.5);
 }
 */
+
+@media only screen and (max-width: 600px) {
+  #new-item {
+    width: 80vw;
+  }
+}

@@ -21,18 +21,20 @@
 	<header>
       <h1>Lista de tareas</h1>
     </header>
-        <form method="POST" action="/">
-            <input type="text"
-                id="new-item"
-                name="item"
-                pattern=".{3,}"
-                required
-                aria-label="Write a new todo item"
-                title="3 characters minimum"/>
-            <button class="todo-button" type="submit" value="Add new item" id="add-new-item">
-              <i class="fas fa-plus-square"></i>
-            </button>
-        </form>
+		<div class="center-div">
+			<form method="POST" action="/">
+				<input type="text"
+					id="new-item"
+					name="item"
+					pattern=".{3,}"
+					required
+					aria-label="Write a new todo item"
+					title="3 characters minimum"/>
+				<button class="todo-button" type="submit" value="Add new item" id="add-new-item">
+				<i class="fas fa-plus-square"></i>
+				</button>
+			</form>
+		</div>
 		<div class="todo-container">
 		<ul class="todo-list">
 			<%=  for todo <- todos do  %>
