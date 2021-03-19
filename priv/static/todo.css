@@ -68,7 +68,7 @@ form button:hover {
 .todo li {
   flex: 1;
   max-width: 70vw;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .trash-btn,
