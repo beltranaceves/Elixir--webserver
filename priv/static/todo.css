@@ -47,6 +47,7 @@ form button:hover {
 .todo-list {
   min-width: 30%;
   list-style: none;
+  display: contents;
 }
 
 .todo {
@@ -65,6 +66,8 @@ form button:hover {
 }
 .todo li {
   flex: 1;
+  max-width: 70vw;
+  overflow: scroll;
 }
 
 .trash-btn,
