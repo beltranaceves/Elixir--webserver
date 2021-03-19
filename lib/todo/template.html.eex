@@ -36,8 +36,9 @@
 			</form>
 		</div>
 		<div class="todo-container">
-		<ul class="todo-list">
+		
 			<%=  for todo <- todos do  %>
+			<ul class="todo-list">
 			<div class="todo" style="display: flex;">
 				<%=  if todo.done do  %>
 				<li  class="todo-item"><s><%= todo.name %></s></li>
@@ -69,8 +70,9 @@
 				</form>
 				<%  end  %>
 			</div>
+			</ul>
 			<%  end  %>
-		</ul>
+		
 		</div>
 	</body>
 </html>

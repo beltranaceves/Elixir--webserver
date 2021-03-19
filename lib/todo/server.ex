@@ -29,6 +29,7 @@ defmodule Todo.Server do
   end
 
   def handle_call({:list}, _from, state) do
+    IO.puts(state)
     {:reply, state, state}
   end
 

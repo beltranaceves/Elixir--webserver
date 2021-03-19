@@ -39,7 +39,7 @@ form button:hover {
   color: white;
 }
 .todo-container {
-  display: flex;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -48,6 +48,7 @@ form button:hover {
   min-width: 30%;
   list-style: none;
   display: contents;
+  white-space:nowrap;
 }
 
 .todo {
@@ -67,7 +68,7 @@ form button:hover {
 .todo li {
   flex: 1;
   max-width: 70vw;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .trash-btn,
@@ -147,4 +148,8 @@ select {
   #new-item {
     width: 80vw;
   }
+  .todo li {
+    overflow: scroll;
+  }
 }
+
