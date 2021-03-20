@@ -17,6 +17,12 @@ defmodule Todo.Router do
     send_resp(conn, 200, response)
   end
 
+  get "/static" do
+    todos = Server.list()
+    response = EEx.eval_file(@template, todos: todos)
+    send_resp(conn, 200, response)
+  end
+
   post "/" do
     response =
       read_input(conn)
