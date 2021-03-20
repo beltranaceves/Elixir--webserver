@@ -18,7 +18,7 @@
 		integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
 		crossorigin="anonymous"
 		/>
-		<link rel="stylesheet"  href="./static/todos.css"/>
+		<link rel="stylesheet"  href="./static/todo.css"/>
 		<link defer rel="manifest" href="./static/manifest.json"/>
 	</head>
 	<body>
