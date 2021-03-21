@@ -4,23 +4,22 @@ defmodule Todo.Router do
 
   alias Todo.Server
 
-  @template "lib/todo/template.html.eex"
+  @template "priv/static/template.html.eex"
 
-  plug(Plug.Static, from: :todo, at: "/static")  #Routing de contenido statico (css, js)
-  plug(Plug.Logger)
+  plug(Plug.Static, from: :todo, at: "/static", headers: %{"Service-Worker-Allowed" => "/"})  #Routing de contenido statico (css, js)
   plug(:match)
   plug(:dispatch)
-
+ 
+  
   get "/" do
     todos = Server.list()
     response = EEx.eval_file(@template, todos: todos)
     send_resp(conn, 200, response)
   end
 
-  get "/static" do
-    todos = Server.list()
-    response = EEx.eval_file(@template, todos: todos)
-    send_resp(conn, 200, response)
+  get "/service-worker.js" do
+    send_file(conn
+    |> put_resp_header("Content-Type", "text/javascript"), 200, "service-worker.js")
   end
 
   post "/" do

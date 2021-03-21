@@ -4,6 +4,7 @@
 		<title>AS Todo App</title>
 		<meta  charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eba653"/>
 		<meta name="description" content="
 		Author: Beltran Aceves,
 		Description: Simple Todo PWA with Elixir backend">
@@ -18,13 +19,20 @@
 		integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
 		crossorigin="anonymous"
 		/>
-		<link rel="stylesheet"  href="./static/todos.css"/>
+		<link rel="stylesheet"  href="./static/todo.css"/>
 		<link defer rel="manifest" href="./static/manifest.json"/>
 	</head>
 	<body>
 		<script>
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./static/service-worker.js');
+        navigator.serviceWorker.register('./service-worker.js')
+        .then(function (registration)
+        {
+          console.log('Service worker registered successfully');
+        }).catch(function (e)
+        {
+          console.error('Error during service worker registration:', e);
+        });
 			}
 		</script>
 		<header>
