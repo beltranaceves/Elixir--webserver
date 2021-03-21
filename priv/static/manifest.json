@@ -1,8 +1,7 @@
 {
   "name": "Todo AS",
   "short_name": "Todo AS",
-  "start_url": "./",
-  "scope": ".",
+  "start_url": "/",
   "icons": [
     {
       "src": "icons/manifest-icon-192.png",
