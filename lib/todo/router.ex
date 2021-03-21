@@ -18,7 +18,6 @@ defmodule Todo.Router do
   end
 
   get "/service-worker.js" do
-    
     send_file(conn
     |> put_resp_header("Content-Type", "text/javascript"), 200, "service-worker.js")
   end

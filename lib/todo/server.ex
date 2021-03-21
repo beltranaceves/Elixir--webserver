@@ -28,7 +28,7 @@ defmodule Todo.Server do
     {:ok, []}
   end
 
-  def handle_call({:list}, _from, state) do
+  def handle_call({:list}, _from, state) when state !=nil do
     IO.puts(state)
     {:reply, state, state}
   end
@@ -39,7 +39,7 @@ defmodule Todo.Server do
     {:reply, new_state, new_state}
   end
 
-  def handle_call({:toggle, id}, _from, state) do
+  def handle_call({:toggle, id}, _from, state) when id != nil do
     [todo] = Enum.filter(state, fn x -> x.id == id end)
     toggled_todo = %{todo | done: !todo.done}
 
