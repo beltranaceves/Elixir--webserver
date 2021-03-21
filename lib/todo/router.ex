@@ -6,7 +6,7 @@ defmodule Todo.Router do
 
   @template "priv/static/template.html.eex"
 
-  plug(Plug.Static, from: :todo, at: "/static", headers: %{"Service-Worker-Allowed" => "/"})  #Routing de contenido statico (css, js)
+  plug(Plug.Static, from: :todo, at: "/static")  #Routing de contenido statico (css, js)
   plug(:match)
   plug(:dispatch)
  
