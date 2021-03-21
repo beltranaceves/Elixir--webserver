@@ -1,5 +1,5 @@
 # Todo App PWA
 
-[Live demo PWA](https://elixir-webserver.beltranaceves.repl.co/)
+[Live demo PWA](https://todo-as-beltran.herokuapp.com/)
 
 
