@@ -61,6 +61,8 @@
 				<li  class="todo-item"><s><%= todo.name %></s></li>
 				<form  method="POST"  action="toggle">
 					<input  type="hidden"  name="item"  value="<%= todo.id %>">
+          <input  type="hidden"  name="name"  value="<%= todo.name %>">
+          <input  type="hidden"  name="done"  value="false">
 					<button class="complete-btn incomplete" type="submit" value="Not Done" aria-label="Mark item as done">
 					<i class="fas fa-check"></i>
 					</button>
@@ -75,6 +77,8 @@
 				<li  class="todo-item"><%= todo.name %></li>
 				<form  method="POST"  action="toggle">
 					<input  type="hidden"  name="item"  value="<%= todo.id %>">
+          <input  type="hidden"  name="name"  value="<%= todo.name %>">
+          <input  type="hidden"  name="done"  value="true">
 					<button class="complete-btn incomplete" type="submit" value="Done" aria-label="Mark item as done">
 					<i class="fas fa-check"></i>
 					</button>

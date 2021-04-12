@@ -34,7 +34,7 @@ defmodule Todo.Router do
 
   post "/toggle" do
     response =
-      read_input(conn)
+      read_input_tuple(conn)
       |> Server.toggle()
       |> build_response
 
@@ -56,6 +56,16 @@ defmodule Todo.Router do
     {:ok, body, _conn} = read_body(conn)
     "item=" <> item = body
     item
+  end
+
+  defp read_input_tuple(conn) do
+    {:ok, body, _conn} = read_body(conn)
+    split_body = String.split(body, "&")
+    "item=" <> item = Enum.at(split_body, 0)
+    "name=" <> name = Enum.at(split_body, 1) 
+                      |> String.replace("+", " ")
+    "done=" <> done = Enum.at(split_body, 2)
+    %{id: item, name: name, done: done}
   end
 
   defp build_response(todos) do
