@@ -1,11 +1,11 @@
-name: Elixir CI
+name: Gigalixir CD
 
 on:
   push:
     branches:
       - master
 jobs:
-  docker:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
